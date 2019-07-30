@@ -27,7 +27,7 @@ fs.readdir("./eventos/", (err, files) => {
   files.forEach(file => {
     let eventFunction = require(`./eventos/${file}`);
 		let eventName = file.split(".")[0];
-		client.on(eventName, (...args) => eventFunction.run(client, ...args, db));
+		client.on(eventName, (...args) => eventFunction.run(client, ...args));
 	});
 });
 client.login(process.env.SECRET); // crie um arquivo .env, nele escreva SECRET=SEUTOKEN
