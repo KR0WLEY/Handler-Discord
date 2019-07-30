@@ -1,5 +1,4 @@
 // .
-const firebase = require("firebase/app");
 const { readdirSync } = require('fs');
 const { join } = require('path');
 const Discord = require("discord.js");
