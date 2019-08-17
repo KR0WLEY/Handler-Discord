@@ -1,5 +1,5 @@
 // .
-const { readdirSync } = require('fs');
+const { readdirSync, readdir } = require('fs');
 const { join } = require('path');
 const Discord = require("discord.js");
 const client = new Discord.Client()
@@ -23,7 +23,7 @@ client.on("message", async message => {
       if (commandfile) commandfile.run(client, message, args);
   })
 //event handler
-fs.readdir("./eventos/", (err, files) => {
+readdir("./eventos/", (err, files) => {
   if (err) return console.log("[ERROR EVENT] " + err);
   files.forEach(file => {
     let eventFunction = require(`./eventos/${file}`);
